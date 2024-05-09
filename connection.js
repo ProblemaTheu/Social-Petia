@@ -1,21 +1,15 @@
-import mysql from "mysql"
+const { Client } = require('pg');
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'me',
-  password : 'secret',
-  database : 'my_db'
-});
- 
-connection.connect((err) => {
-    if(err){
-        console.log("Erro ao conectar no bando de dados", err)
-        return;
-    }
-    
-    console.log("Conexão bem sucedida no banco de dados MySQL!")
+// Configurações de conexão com o banco de dados
+const client = new Client({
+  user: '',
+  host: '',
+  database: '',
+  password: '',
+  port: 5432,
 });
 
-/* querys aqui, depois perguntar pro pita se faz esse codigo ser uma classe ou não */
-
-connection.end();
+// Conectar ao banco de dados
+client.connect()
+  .then(() => console.log('Conexão bem-sucedida ao banco de dados PostgreSQL!'))
+  .catch(err => console.error('Erro ao conectar ao banco de dados:', err));
