@@ -7,7 +7,14 @@ var connection = mysql.createConnection({
   database : 'my_db'
 });
  
-connection.connect();
+connection.connect((err) => {
+    if(err){
+        console.log("Erro ao conectar no bando de dados", err)
+        return;
+    }
+    
+    console.log("Conexão bem sucedida no banco de dados MySQL!")
+});
 
 /* querys aqui, depois perguntar pro pita se faz esse codigo ser uma classe ou não */
 
