@@ -12,3 +12,5 @@
     olho.mouseout(function() { 
       senha.attr("type", "password");
     });
+
+    /* codigo depreciado, tenho q ver depois oq usar no lugar disso */
